@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div>
+  <h3>좋아요 누른 글</h3>
+  <div>
+    {% for like in user.likes.all %}
+    <a href="{% url 'detail' like.post.pk %}">
+      <h4>{{like.post.title}}</h4>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+
+<div>
+  <h3>스크랩한 글</h3>
+  <div>
+    {% for scrap in user.scraps.all %}
+    <a href="{% url 'detail' scrap.post.pk %}">
+        <h4>{{scrap.post.title}}</h4>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
+
+
+
