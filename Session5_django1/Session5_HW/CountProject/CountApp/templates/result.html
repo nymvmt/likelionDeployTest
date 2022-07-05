@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Black+Han+Sans&family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="yourtext">
+      <p>{{text}}</p>
+    </div>
+    
+    <div class="result">
+        <div class="content">
+            <h1>공백포함 글자수</h1>
+            <p>{{total_len}}</p>
+        </div>
+        <div class="content">
+            <h1>공백제외 글자수</h1>
+            <p>{{no_blank_len}}</p>
+        </div>
+        <div class="content">
+            <h1>단어수</h1>
+            <p>{{word_len}}</p>
+        </div>
+    </div>
+
+    <button class="button" type = "button" 
+            onclick = "location.href='count'">
+            RESET</button>
+  </body>
+</html>
