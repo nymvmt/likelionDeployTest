@@ -1,0 +1,287 @@
+.entire{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    
+    padding: 4% 0%;
+    
+    max-width: 750px;
+    min-width: 541px;
+
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+
+    height: 8%;
+    width: 95%;
+
+    margin-bottom: 4%;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 8%;
+    width: 88%;
+}
+
+
+
+.menu_bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 95%;
+}
+
+.banner {
+    border-radius: 18px;
+    
+    width: 98%;
+    margin-bottom: 1%;
+}
+
+.board{
+    border: 2px solid rgb(220, 220, 220);
+    border-radius: 13px;
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 98%;
+    margin-bottom: 4%;
+}
+
+/*--------------header---------------*/
+.main_title{
+    display: flex;
+    flex-direction:column;
+
+    width: 35%;
+    margin: 0 0 auto;
+}
+
+.main_title > h1{
+    margin: 3% 0% 3%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.icons_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+        
+    width: 15%;
+    margin-left: auto;
+}
+
+/*---------------blocks---------------*/
+.blocks{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /*끝에서 바운스 되도록*/
+
+
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.blk{
+    flex: 0 0 auto; /*flex: flex-grow화면 늘릴 때 비율 flex-shrink화면 줄일 때 비율 flex-basis요소의 크기*/
+    width: 60%;
+
+    border: 2px solid rgb(220, 220, 220);
+    border-radius: 13px;
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+
+    margin: 0 0.5%;
+}
+
+.blk_name{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height:40%;
+    width:80%;
+}
+
+.blk_contents{
+    display: flex;
+    flex-direction:column;
+
+    height:60%;
+    width:80%;
+}
+
+/*===============*/
+
+.blk_name_text{
+    display: flex;
+    flex-direction:column;
+
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.blk_name_text > h2{
+    margin: 18% 0 1%;
+}
+
+.blk_content{
+    display: flex;
+
+    height: 30%;
+    width:100%;
+}
+
+.blk_name > img,
+.blk_content > h4{
+    padding-right: 16px;
+}
+
+.blk > h5{
+    margin-right: 160px;
+    margin-top: 5px;
+    background-color:  rgb(238, 238, 238);
+    border-radius: 30px;
+    width: 50px;
+    text-align: center;
+    padding: 1% 0;
+
+    color: gray;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+/*---------------menu_bar---------------*/
+
+.menu{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 16.7%;
+}
+
+/*----------------board-----------------*/
+
+.board_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width:90%;
+    margin-top: 1%;
+}
+
+.board_contents{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+
+    width:90%;
+    margin-bottom: 2%;
+}
+
+.board_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width:90%;
+}
+
+.b_c_text{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width:100%;
+
+}
+
+.b_c_text > h3{
+    padding-right: 16px;
+}
+
+
+/*----------------etc-----------------*/
+.red{
+    color: rgb(224, 73, 73);
+    font-size: 14px;
+}
+
+.yellow{
+    color:rgb(243, 199, 76);
+    font-size: 14px;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 14px;
+    font-weight: 400;
+    color:rgb(131, 131, 131);
+}
+
+h5{
+    font-size: 15px;
+    font-weight: 1000;
+    color:rgb(85, 85, 85);
+}
+
+/*===========*/
+
+.icons{
+    height: 25px;
+    width: 25px;
+}
+
+.menu_icons{
+    height: 18px;
+    width: 18px;
+}
+
+#new{
+    height: 10px;
+    width: 10px;
+}
+
+
+
+/*참고 사이트: 
+Flex로 가로 스크롤 삽입하기
+https://do-first-dream-next.tistory.com/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%97%90-Flex%EB%A1%9C-%EA%B0%80%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%82%BD%EC%9E%85%ED%95%98%EA%B8%B0 */
