@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{}}컴퓨터학과 전공 과목</h1>
+    <ol>
+        {%for subject in com_major%}  
+        {% comment %} com_major 제외하고는 그냥 변수니까 굳이 안 바꿈~ {% endcomment %}
+            <div class="list">
+                <li>
+                    <span class="bold">{{subject.subject_name}}</span>
+                    <span> | {{subject.subject_major}} |</span>
+                    <span> {{ subject.prof_name }} </span>
+
+                    <a href="{% url 'editSubject' subject.pk %}" class="button"> 수정</a>
+                    <a href="{% url 'deleteSubject' subject.pk %}" class="button"> 삭제</a>
+
+                    <div class="memos">
+                        <a>{{ subject.memo|linebreaks }}</a>
+                    </div>
+                </li>
+            </div>
+        {% endfor %}
+    </ol>
+</body>
+</html>

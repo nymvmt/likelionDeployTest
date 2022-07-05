@@ -1,0 +1,184 @@
+*{
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+ol, ul, li{
+  list-style: none;
+  margin: 10px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.entire{
+  display: flex;
+  flex-direction: column;
+}
+
+.section{
+  margin-bottom: 100px;
+
+}
+
+.title_container{
+  height: 50px;
+  background-color: rgb(64, 24, 24);
+  margin:3px 0 20px;
+
+  color: rgb(246, 246, 246);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title{
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.list{
+  color: rgb(41, 41, 41);
+}
+
+.button{
+  background: rgb(214, 214, 214);
+  color:rgb(41, 41, 41);
+  margin-right: 5px;
+  padding: 4px 7px;
+  border-radius: 5px;
+}
+
+.button:hover{
+  background: rgb(225, 225, 225);
+  color:rgb(57, 57, 57);
+  padding: 4px 7px;
+  border-radius: 5px;
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  padding-left: 0;
+}
+
+.bold{
+  color: rgb(102, 23, 23);
+  font-weight: 600;
+  font-size:18px;
+}
+
+
+.content span{
+  padding-right:20px;
+}
+
+.content_right{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content_left{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input_container{
+  margin: 0 15px 20px;
+  padding: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+
+}
+
+input, textarea{
+  background-color:rgb(243, 243, 243);
+  height: 50px;
+  width: 100%;
+}
+
+.memo{
+  background: rgb(243, 239, 239);
+  color:rgb(73, 73, 73);
+  font-size: 13px;
+  margin-right: 5px;
+  padding: 4px 7px;
+  border-radius: 5px;
+  height: 18px;
+}
+/* 
+.main{
+  margin-bottom: 8px;
+}
+.detail{
+  display: flex;
+  text-align: center;
+  font-weight:300px;
+  font-size: 16px;
+
+  color:rgb(64, 64, 64)
+}
+
+.title {
+  font-weight:700;
+  font-size: 20px;
+  color:rgb(41, 41, 41);
+}
+
+label{
+  font-weight:700;
+  font-size: 16px;
+  color:rgb(41, 41, 41);
+}
+
+.duedate{
+  margin-left: 10px;
+  font-weight: 500;
+  color:rgb(150, 150, 150);
+  font-size: 15px;
+}
+
+.duedate_detail{
+  margin-left: 10px;
+  font-weight: 500;
+  color:rgb(150, 150, 150);
+  font-size: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#description{
+  font-size: 11px;
+  margin-top: 9px;
+  margin-right: 5px;
+}
+
+.remain{
+  margin-left: 10px;
+  padding: 0.2px 3px;
+  font-weight: 500;
+  color:rgb(255, 255, 255);
+  background-color:rgb(136, 193, 136)
+}
+
+
+.input_all{
+  margin-top: 10px;
+  /* font-family:  */
+/* }
+
+
+} */ */

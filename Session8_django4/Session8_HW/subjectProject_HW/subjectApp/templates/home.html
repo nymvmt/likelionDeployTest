@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Jura:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class='entire'>
+        <div class="category_major">
+            <div class="category">
+                <h1>모든 전공</h1>
+                <div>
+                    {% comment %} <a href="{% url 'listMajor' %}">목록 편집</a> {% endcomment %}
+                    <a class="big_button" href="{% url 'addMajor' %}">전공 추가</a>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    {%for major in Major%} 
+                        <div class="list">
+                            <div class="info">
+                                <span>{{major.name}}</span>
+                            </div>
+                            
+                            <div class="buttons">
+                                <a href="{% url 'editMajor' major.pk %}" class="button"> 수정</a>
+                                <a href="{% url 'deleteMajor' major.pk %}" class="button"> 삭제</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="category_subject">
+            <div class="category">
+                <h1>모든 과목</h1>
+                <div>
+                    <a class="big_button" href="{% url 'computer' %}">컴퓨터학과만 보기</a>
+                    <a class="big_button" href="{% url 'addSubject' %}">과목 추가</a>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    {%for subject in Subject%}  
+                        <div class="list">
+                            {% comment %} <a href="{% url "computer" %}" class="bold">{{subject.subject_name}}</a> {% endcomment %}
+                            <div class="info">
+                                <div class="info_main">
+                                    <span>{{subject.subject_name}}</span>
+                                    <span> | {{subject.subject_major}} |</span>
+                                    <span> {{ subject.prof_name }} </span>
+                                </div>
+                                <div class="memos">
+                                    <span>{{ subject.memo|linebreaks }}</span>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="{% url 'editSubject' subject.pk %}" class="button"> 수정</a>
+                                <a href="{% url 'deleteSubject' subject.pk %}" class="button"> 삭제</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+</body>
+</html>
