@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+    {% load static %}
+    <link href="{% static 'all.css' %}" rel="stylesheet">
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+
+    <div class="input_all">
+        <div class="input_container">
+            <label for="title">제목</label>
+            <input type="text" name="title" id="title" placeholder="할 일 이름을 입력해주세요.">
+        </div> 
+        <div class="input_container">
+            <label for="content">내용</label>
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="할 일 세부사항을 입력해주세요."></textarea> 
+        </div>
+        <div class="input_container">
+            <label for="duedate">마감기한</label>
+            <input type="date" name="duedate" id="duedate">
+    </div> 
+
+    <div class="button">
+        <button type="submit">등록</button> 
+    </div>
+    </form>
+</body>
+</html>

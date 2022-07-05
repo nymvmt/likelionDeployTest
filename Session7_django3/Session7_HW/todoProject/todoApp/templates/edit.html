@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    {% load static %}
+    <link href="{% static 'all.css' %}" rel="stylesheet">
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+
+    <div class="input_all">
+        <div class="input_container">
+            <label for="title">제목</label>
+            <input type="text" name="title" id="title" value={{todo.Todo_title}}>
+        </div> 
+        <div class="input_container">
+            <label for="detail">내용</label>
+            <textarea name="detail" id="detail" cols="30" rows="10">{{todo.Todo_detail}}</textarea> 
+        </div>
+        <div class="input_container">
+            <label for="duedate">마감기한</label>
+            <input type="date" name="duedate" id="duedate" value={{todo.Todo_due | date:'Y-m-d'}}>
+        </div>
+        
+        <div class="button">
+            <button type="submit">수정하기</button> 
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>

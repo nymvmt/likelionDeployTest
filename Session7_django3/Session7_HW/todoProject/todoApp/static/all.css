@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+ol, ul, li{
+    list-style: none;
+    margin: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+h1{
+    height: 50px;
+    border-bottom: 1px solid rgb(136, 193, 136);
+    margin:3px 0 20px;
+
+    color: rgb(46, 129, 46);
+}
+
+h3{
+    height: 30px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+
+.button{
+    background: rgb(136, 193, 136);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button a,
+.button button{
+    background: rgb(240, 255, 240);
+    border: 2px solid rgb(136, 193, 136);
+    color:rgb(37, 91, 37);
+    padding: 4px 7px;
+    border-radius: 12px;
+}
+
+.button a:hover,
+.button button:hover{
+    background: rgb(37, 91, 37);
+    color: rgb(240, 255, 240);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 70%;
+}
+
+.main{
+    margin-bottom: 8px;
+}
+
+.detail{
+    display: flex;
+    text-align: center;
+    font-weight:300px;
+    font-size: 16px;
+
+    color:rgb(64, 64, 64)
+}
+
+.title {
+    font-weight:700;
+    font-size: 20px;
+    color:rgb(37, 91, 37);
+}
+
+label{
+    font-weight:700;
+    font-size: 16px;
+    color:rgb(37, 91, 37);
+}
+
+.duedate{
+    margin-left: 10px;
+    font-weight: 500;
+    color:rgb(150, 150, 150);
+    font-size: 15px;
+}
+
+.duedate_detail{
+    margin-left: 10px;
+    font-weight: 500;
+    color:rgb(150, 150, 150);
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#description{
+    font-size: 11px;
+    margin-top: 9px;
+    margin-right: 5px;
+}
+
+.remain{
+    margin-left: 10px;
+    padding: 0.2px 3px;
+    font-weight: 500;
+    color:rgb(255, 255, 255);
+    background-color:rgb(136, 193, 136)
+}
+
+
+.input_all{
+    margin-top: 10px;
+    /* font-family:  */
+}
+
+.input_container{
+    margin: 0 15px 20px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+input, textarea{
+    background-color:rgb(240, 255, 240);
+    width: 85%;
+}

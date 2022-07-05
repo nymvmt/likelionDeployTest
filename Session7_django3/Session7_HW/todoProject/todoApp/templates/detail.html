@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    {% load static %}
+    <link href="{% static 'all.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>{{todotitle}}</h1>
+    <div>
+        <h3 class="detail">{{ tododetail }}</h3>
+    </div>
+    <div class="duedate_detail">
+        <h3 class="detail" id ="description">마감 기한 |</h3>
+        {% comment %} <h3>{{ tododate }}</h3> {% endcomment %}
+        <h3 class="detail">{{tododate}}</h3>
+    </div>
+    <div class="button">
+        <a href="{% url 'edit' detailpage.pk %}"> 수정하기 </a>
+        <a href="{% url 'delete' detailpage.pk %}"> 삭제하기 </a>
+        <a href="{% url 'home' %}"> 홈으로 </a>
+    </div>
+</body>
+</html>
