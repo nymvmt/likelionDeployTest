@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
+}
+
+body {
+  background-color: #FFF;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+.header {
+    font-family:'Black Han Sans';
+    border: 3px solid rgb(1, 55, 136);
+    position: fixed;
+
+    width: 100%;
+    z-index: 10;
+
+    background-color: #FFF;
+  }
+
+.header ul{
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.header li, .header a{
+        color: rgb(1, 55, 136);
+        font-size: 16px;
+        font-weight: 400;
+        display: inline-block;
+        width: 80px;  
+}
+
+.banner{
+    padding-bottom: 5%;
+    background-image: url("./image/watercolorblue.png");
+}
+
+.banner h6{
+    font-size: 14px;
+    text-align: right;
+    padding: 0px 15px;
+}
+
+#title{
+    color: rgb(1, 55, 136);
+    font-family:'Black Han Sans';
+    font-size: 100px;
+    text-align: right;
+    height: 16px;
+    padding: 140px 15px 40px;
+}
+
+.detail_profile {
+    text-align: left;
+}
+
+.detail{
+    display: inline-block;
+    min-width: 500px;
+    padding:2% 2% 10%;
+}
+
+
+h2 {
+    text-align: left;
+    font-family:'Black Han Sans';
+    font-size: 32px;
+}
+
+h3 {
+    border-spacing: 10%;
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+
+
+}
+
+h4{
+    text-align: left;
+}
+
+
+.introduce{
+    background-color: rgb(238, 245, 253);
+    border: 1px hidden rgb(1, 55, 136);
+    padding:5px;
+    margin: 30px 2px;
+}
+
+
+.foods, 
+.drinks{
+    display: inline-block;
+    min-width: 500px;
+    padding:2% 2% 0%;
+}
+
+
+.introduce li {
+    display: inline-block;
+
+    height: 30px;
+    width: auto;
+    padding: 1px 10px 20px;
+
+    margin: 20px;
+    display: inline-block;
+   
+    color: rgb(1, 55, 136);
+    background-color: #FFF;
+    border-radius: 10%;
+
+    font-weight: 400;
+}
+
+
+
+
+.SNS {
+    background-color:rgb(1, 55, 136);
+    text-align: left;
+    padding: 10px;
+}
+
+table{
+    color: #FFF;
+}
+
+
+.SNS a {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.SNS table td{
+    text-align: left;
+}
+
+.aaa{
+    font-size: 10px
+}
+
+.bbb{
+    font-size: 12px;
+}
+
+
+
+
+#viewmore{
+    font-style: italic;
+    font-size: smaller;
+    color: rgb(1, 55, 136);
+}
+
+
+.header li:hover,
+.SNS a:hover,
+#viewmore:hover{
+    color:  rgb(255, 91, 104);
+}
+
+.introduce li:hover {
+    color:   rgb(255, 91, 104);
+    background-color: rgb(255, 242, 247);
+}
+
