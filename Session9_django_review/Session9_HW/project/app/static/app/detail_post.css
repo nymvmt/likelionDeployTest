@@ -1,0 +1,48 @@
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 800px;
+  height: 200px;
+  font-size: 50px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: black 2px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_box{
+  border: black 2px;
+}
+
+.button {
+  background-color: black;
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+.button:hover {
+  background-color: gray;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  margin: 0px;
+}
+
+.content-box {
+  border: solid;
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
