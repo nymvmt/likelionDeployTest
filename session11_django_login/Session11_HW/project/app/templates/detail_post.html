@@ -1,0 +1,131 @@
+{% extends 'base.html'%}
+
+  {% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/detail_post.css' %}">
+  {% endblock css %}
+
+
+  {% block header %}
+  <h1>{{ post.title }}</h1>
+  {% endblock header %}
+        
+
+  {% block bar %}
+
+  {% if user != post_author %}
+  {% comment %} <div class="buttons">
+    <a class="button" href="{% url 'home' %}">뒤로가기</a>
+  </div> {% endcomment %}
+
+  {% else %}
+  <div class="buttons">
+    {% comment %} <a class="button" href="{% url 'home' %}">뒤로가기</a> {% endcomment %}
+     <a class="button" href="{% url 'edit_post' post.pk %}">수정하기</a>
+    <a class="button" href="{% url 'delete' post.pk %}">삭제하기</a>
+  </div>
+
+  {% endif %}
+
+  
+
+  {% endblock bar %}
+
+
+  {% block content %}
+  <div class="content-main">
+    <div class="content-detail">
+        <h4>▶︎ 조회수: {{counting}}</h4>
+        <h4>▶︎ 작성자: {{post_author}}</h4>
+    </div>
+    <p>{{ post.content }}</p>
+  </div>
+
+  <div class="content-comment">
+      <div class="content-comment-button">
+          <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="댓글을 입력해주세요"/>
+            <button class ="button" type="submit">작성하기</button>
+          </form>
+      </div>
+      <div class="content-comment-list">
+          {% for comment in post.comments.all %}
+          <li> 
+            <div class="li-left">
+              <span class="name"> {{comment.author}}</span>
+              <span class="cmt">{{comment.content}}<span>
+            </div>
+
+            {% if user == comment.author %}
+            <div class="li-right">
+              <a class ="button" href="{% url 'delete-comment' post.pk comment.pk %}">삭제</a>
+            </div>
+            {% endif %}
+            
+          </li>
+          {% endfor %}
+      </div>
+  </div>
+  {% endblock content %}
+{% comment %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/detail_post.css' %}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="header">
+        <h1>{{ post.title }}</h1>
+      </header>
+
+      <div class="bar" >
+          <h4>조회수: {{post.counting}}</h4>
+          <div class="buttons">
+            <a class="button" href="{% url 'home' %}">뒤로가기</a>
+            <a class="button" href="{% url 'edit_post' post.pk %}">수정하기</a>
+            <a class="button" href="{% url 'delete' post.pk %}">삭제하기</a>
+          </div>
+      </div>
+
+      <div class="content-box">
+          <div class="content-main">
+            <p>{{ post.content }}</p>
+          </div>
+
+          <div class="content-comment">
+              <div class="content-comment-button">
+                  <form method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="content" placeholder="댓글을 입력해주세요"/>
+                    <button class ="button" type="submit">작성하기</button>
+                  </form>
+              </div>
+              <div class="content-comment-list">
+                  {% for comment in post.comments.all %}
+                  <li> 
+                    <div class="li-left">
+                      <span class="name"> | 익명 | </span>
+                      <span class="cmt">{{comment.content}}<span>
+                    </div>
+                    <div class="li-right">
+                      <a class ="button" href="{% url 'delete-comment' post.pk comment.pk %}">삭제</a>
+                    </div>
+                  </li>
+                  {% endfor %}
+              </div>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html> {% endcomment %}

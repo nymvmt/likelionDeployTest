@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block css %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}" />
+{% endblock css %} 
+
+{% block header %}
+<a class="home-button" href={% url 'home' %}>로그인하세요!</a>
+{% endblock header %}
+
+{% block content %}
+<section class="login_box" id="login">
+  <form class="login_form" method="POST">
+    {% csrf_token %}
+    {% if error %}
+      <h2>{{error}}</h2>
+    {% endif %}
+
+    <input class="login_form_item" type="text" name="username" placeholder="아이디" />
+    <input class="login_form_item"type="password" name="password" placeholder="비밀번호" />
+    <button class="login_form_button">로그인</button>
+  </form>
+</section>
+{% endblock %} 

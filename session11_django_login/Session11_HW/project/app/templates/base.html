@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load socialaccount %}{% providers_media_js %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그</title>
+  {% load static %}
+  {% block css %}
+  {% endblock css %}
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+
+      <header class="header">
+        <h1>
+          {% block header %}
+          {% endblock header %}
+        </h1>
+      </header>
+
+
+      <div class="bar" >        
+                {% if user.is_authenticated %}
+                <div class="bar_right">
+                    <li><span class="button_user">안녕, {{user.username}}</span></li>
+                    <li><a class="button_user" href="{% url 'logout' %}">로그아웃</a></li>
+                </div>
+                {% else %}
+                <div class="bar_right">
+                    <form class="login" method="POST" action="{% provider_login_url 'kakao' %}"> 
+                      {% csrf_token %} 
+                      {{ form.as_p}} 
+                      
+                      {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                      {% endif %}
+            
+                      <button class="button_user" type="submit">카카오 로그인</button>
+                    </form> 
+        
+                    <li><a class="button_user" href="{% url 'login'%}">로그인</a></li>
+                    <li><a class="button_user" href="{% url 'signup'%}">회원가입</a></li>
+                </div>
+                {% endif %}
+                <div class="bar_left">
+                  <li class="buttons">
+                    {% block bar %}
+                    {% endblock bar %}
+                  </li>
+                </div>
+      </div>
+
+
+
+      <div class="content-box">
+        {% block content %}
+        {% endblock content %}
+      </div>
+
+
+
+      <footer class="footer">
+        <p>@kimnayoung 
+            ||  010-4731-9007
+            ||  and____young@gmail.com</p>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
