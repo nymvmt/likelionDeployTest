@@ -1,0 +1,216 @@
+.entire{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    
+    padding: 4% 0%;
+
+    max-width: 600px;
+    min-width: 350px;
+}
+
+.icons{
+    height: 25px;
+    width: 25px;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 98%
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 88%;
+}
+
+
+.profile{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    padding: 6% 3% 0%;
+}
+
+.feed{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    padding: 3% 0%;
+}
+
+/*--------------header---------------*/
+
+.id{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 17%;
+    padding-left: 10%;
+}
+
+.icons_right{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 16%;
+}
+
+/*---------------profile---------------*/
+.info_1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2% 0%;
+    width: 100%;
+}
+
+.info_2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+}
+
+
+.info_3{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+}
+
+.ppl_follow {
+    display: flex;
+    align-items: center;
+
+    padding-right: 4px;
+    width: 15%;
+
+    position: relative;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    width: 100%;
+    padding: 4% 0% 0%;
+}
+
+/* ================================ */
+
+.numb{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 80px;
+}
+
+.numb p{
+    margin: 5%;
+}
+
+/* ===========*/
+
+.info_3 img{
+    height: 25px;
+    width: 25px;
+}
+
+#IU{
+    position: absolute;
+
+    z-index: 3;
+}
+
+#ppl1{
+    position: absolute;
+    left: 20px;
+
+    z-index: 2;
+}
+
+#ppl2{
+    position: absolute;
+    left: 40px;
+
+    z-index: 1;
+}
+
+/* ===========*/
+
+.button_type1,
+.button_type2{
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+
+    height: 23px;
+    padding: 1%;
+}
+
+.button_type1{
+    width: 35%;
+}
+
+.button_type2{
+    width: 15%;
+}
+
+/*----------------feed----------------*/
+
+.category{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    padding: 3%;
+}
+
+
+.pictures{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.pictures img{
+    height: 33%;
+    width: 33%;
+}
+
+/*---------------etc----------------*/
+
+.profile_image{
+    border-radius: 50%;
+}
