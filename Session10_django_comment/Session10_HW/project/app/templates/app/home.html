@@ -1,0 +1,90 @@
+{% extends 'app/base.html'%}
+
+  {% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/home.css' %}">
+  {% endblock css %}
+
+
+  {% block header %}
+  <a class="home-button" href={% url 'home' %}>블로그</a>
+  {% endblock header %}
+        
+
+  {% block bar %}
+  <div class="buttons">
+    <h4>
+      {% comment %} <a class="button" href={% url 'home' %}>블로그 홈</a> {% endcomment %}
+      <a class="button" href="{% url 'create_post' %}">게시글 작성</a>
+    </h4>
+  </div>
+  {% endblock bar %}
+
+
+  {% block content %}
+  {% if not posts %}
+  <p class="if-no-post">게시글 없음</p>
+  {% endif %}
+
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a class="post-title" href={% url 'detail_post' post.pk %}>
+          <p>▶︎ {{post.title}}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endblock content %}
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/home.css' %}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+
+      <header class="header">
+        <h1>
+          <a class="home-button" href={% url 'home' %}>블로그</a>
+        </h1>
+      </header>
+
+      <div class="bar" >
+        <div class="buttons">
+          <h4>
+            <a class="button" href="{% url 'create_post' %}">게시글 작성</a>
+          </h4>
+        </div>
+      </div>
+
+      <div class="content-box">
+        {% if not posts %}
+        <p class="if-no-post">게시글 없음</p>
+        {% endif %}
+
+        <ul>
+        {% for post in posts %}
+          <li>
+            <a class="post-title" href={% url 'detail_post' post.pk %}>
+              <p>▶︎ {{post.title}}</p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html> {% endcomment %}

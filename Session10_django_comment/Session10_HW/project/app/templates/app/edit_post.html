@@ -1,0 +1,93 @@
+{% extends 'app/base.html'%}
+
+  {% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/edit_post.css' %}">
+  {% endblock css %}
+
+
+  {% block header %}
+  <a class="home-button" href={% url 'home' %}>블로그</a>
+  {% endblock header %}
+        
+
+  {% block bar %}
+  <div class="buttons">
+    <h4>
+       {% comment %} <a class="button" href={% url 'home' %}>블로그 홈</a> {% endcomment %}
+       <a class="button" href="{% url 'home' %}">블로그 홈</a>
+      <a class="button" href="{% url 'detail_post' post.pk %}">뒤로가기</a>
+    </h4>
+  </div>
+  {% endblock bar %}
+
+
+  {% block content %}
+  <form class="content-main" method="POST">
+    {% csrf_token %}
+      <label for="title">제목<label>
+      <br>
+      <input id="title" name="title"  value="{{ post.title }}"/>
+      <br><br>
+
+      <label for="content">내용<label>
+      <br>
+      <textarea id="content" name="content"> {{ post.content }} </textarea>
+      <br>
+
+      <button class="button" type="submit">수정</button>
+  </form>
+  {% endblock content %}
+
+
+{% comment %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 수정</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/edit_post.css' %}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="header">
+        <h1>
+          <a class="home-button" href={% url 'home' %}>블로그</a>
+        </h1>
+      </header>
+
+      <div class="bar" >
+        <div class="buttons">
+          <h4>
+            <a class="button" href="{% url 'home' %}">블로그 홈</a>
+            <a class="button" href="{% url 'detail_post' post.pk %}">뒤로가기</a>
+          </h4>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <form class="content-main" method="POST">
+          {% csrf_token %}
+            <label for="title">제목<label>
+            <br>
+            <input id="title" name="title"  value="{{ post.title }}"/>
+            <br><br>
+
+            <label for="content">내용<label>
+            <br>
+            <textarea id="content" name="content"> {{ post.content }} </textarea>
+            <br>
+
+            <button class="button" type="submit">수정</button>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html> {% endcomment %}

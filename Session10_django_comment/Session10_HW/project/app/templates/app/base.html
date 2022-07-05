@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블로그</title>
+  {% load static %}
+  {% block css %}
+  {% endblock css %}
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="page-container">
+
+      <header class="header">
+        <h1>
+          {% block header %}
+          {% endblock header %}
+        </h1>
+      </header>
+
+      <div class="bar" >
+        {% block bar %}
+        {% endblock bar %}
+      </div>
+
+      <div class="content-box">
+        {% block content %}
+        {% endblock content %}
+      </div>
+
+      <footer class="footer">
+        <p>@kimnayoung 
+            ||  010-4731-9007
+            ||  and____young@gmail.com</p>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
