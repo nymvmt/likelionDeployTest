@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+<section id="signup">
+    <form method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <p> {{error}} </p>
+    {% endif %}
+        Username: <input name="username" type="text" value="">
+        Password: <input name="password1" type="password" value="">
+        Confirm Password: <input name="password2" type="password" value="">
+        Nickname: <input name="nickname" type="text" value="">
+        E-mail: <input name="email" type="text" value="">
+        <button>Sign Up</button>
+    </form>
+</section>
+</body>
+</html>

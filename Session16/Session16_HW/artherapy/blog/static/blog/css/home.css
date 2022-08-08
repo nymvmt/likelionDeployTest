@@ -1,0 +1,148 @@
+/* @import url("https://fonts.googleapis.com/css?family=Oswald&display=swap"); */
+
+.main-section{
+  height:95%;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tool-area {
+  height:100%;
+  width:30%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: aliceblue;
+}
+
+.canvas-area{
+  height:100%;
+  width:70%;
+}
+
+.parent{
+  position:relative;
+  overflow: auto;
+}
+
+.canvas {
+  position: absolute;
+  width:100%;
+  height: 100%;
+  cursor: crosshair;
+  z-index: 10;
+  /* margin-top: 13%;p
+  margin-left: 5%; */
+}
+
+.tool:not(:first-child) {
+  margin-left: 50px;
+}
+
+.jscolor {
+  border-style: solid;
+  border-radius: 5px;
+  height: 35px;
+  width: 120px;
+  margin-left: 3px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+/* 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(177, 177, 177);
+  font-family: Oswald, sans-serif;
+  overflow: hidden;
+}
+
+.tool-area {
+  padding-left: 15px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+}
+
+
+.fas,
+.far {
+  font-size: 25px;
+  position: relative;
+  top: 5px;
+  background-color: rgb(82, 82, 82);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fas:hover,
+.far:hover {
+  filter: brightness(90%);
+}
+
+.fa-undo-alt:hover,
+.fa-trash-alt:hover {
+  color: rgb(223, 37, 37);
+}
+
+
+
+.active-tool {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+}
+
+.active-tool > span {
+  background-color: rgb(82, 82, 82);
+  border-radius: 5px;
+  padding: 2.5px 16px;
+  color: white;
+  font-size: 20px;
+  user-select: none;
+}
+
+.tool {
+  position: relative;
+  top: 3px;
+}
+
+.tool:not(:first-child) {
+  margin-left: 8px;
+}
+
+
+.jscolor {
+  border-style: solid;
+  border-radius: 5px;
+  height: 35px;
+  width: 120px;
+  margin-left: 3px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+
+canvas#canvas {
+  position: absolute;
+  top: 50px;
+  cursor: crosshair;
+  z-index: 0;
+} */

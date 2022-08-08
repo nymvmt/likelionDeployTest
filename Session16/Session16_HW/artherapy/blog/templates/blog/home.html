@@ -1,0 +1,121 @@
+{% extends 'blog/base.html' %}
+{% block css %}
+{% load static %}
+  {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/blog/home.css' %}"> {% endcomment %}
+  {% comment %} <link rel="icon" type="image/png" href="favicon.png"> {% endcomment %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'home/base.css' %}"> {% endcomment %}
+  <link rel="stylesheet" type="text/css" href="/static/blog/css/home.css">
+  <link rel="stylesheet" type="text/css" href="/static/blog/css/modal.css">
+{% endblock css %}
+
+{% block bar %}
+
+{% endblock bar %}
+
+{% block content %}
+{% comment %} <div clas="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <p class="modal-title">안녕하세요!</p>
+    </div>
+    <article class="modal-body">
+      그림 일기장입니다!
+    </article>
+    <button class="modal-stop">오늘 하루 보지 않기</button>
+    <button class="modal-close">닫기</button>
+  </div>
+</div>  {% endcomment %}
+
+<div class="main-section">
+    <div class="tool-area">
+        <h2 id="BlackHanSans">{{today}}</h2>
+        
+        <form action="" method="POST" enctype="multipart/form-data" id="form1"> 
+          {% csrf_token %} 
+          <input id="title" name="title" placeholder="일기 제목">
+          <br>
+          <input id="content" name="content" placeholder="한줄 일기">
+          <br>
+          <input type="hidden" name="image" id="image"> 
+          <input type="submit" name="submit" value="저장" onclick="save()"> 
+        </form>
+
+        <!-- Active Tool -->
+        <div class="tool">
+          <span id="active-tool">Not painted yet!</span>
+        </div>
+        <!-- BackGround Paint Tool -->
+        <div class="tool">
+          <input class="jscolor" id="paint-tool" value="ffffff">
+        </div>
+        <!-- Brush -->
+        <div class="brush tool">
+            {% comment %} <i class="brush" id="brush" title="Brush"></i> {% endcomment %}
+            <input class="jscolor" id="brush-color" value="2638AB">
+            <input type="range" min="1" max="50" value="10" class="brush-slider" id="brush-slider">
+            <span class="size" id="brush-size" title="Brush Size">10</span>
+        </div>
+        <!-- Eraser -->
+        <div class="tool">
+            <i class="eraser-tool" id="eraser-tool" title="Eraser">
+              <img height= 30px width= 30px src="https://cdn-icons-png.flaticon.com/512/171/171383.png" alt="로고"/>
+            </i>
+        </div>
+        <!-- Reset Canvas -->
+        <div class="tool">
+            <i class="clear-tool" id="clear-tool">
+              <img height= 30px width= 30px src="https://cdn-icons-png.flaticon.com/512/32/32418.png" alt="로고"/>
+            </i>
+        </div>
+
+        <!-- Save Local Storage -->
+        <div class="tool">
+          <i class="save-storage" id="save-storage" title="Save Local Storage">Save</i>
+          {% comment %} <i class="fas fa-download" id="save-storage" title="Save Local Storage"></i> {% endcomment %}
+        </div>
+        <!-- Load Local Storage -->
+        <div class="tool">
+            <i class="load-storage" id="load-storage" title="Load Local Storage">Load</i>
+        </div>
+        <!-- Clear Local Storage -->
+        <div class="tool">
+            <i class="clear-storage" id="clear-storage" title="Clear Local Storage">Clear</i>
+        </div>
+
+        <!-- Download Image -->
+        <div class="tool">
+            <i class="download-tool" id="download-tool" title="Download to my local PC">
+              <img height= 30px width= 30px src="../../static/blog/image/download.png" alt="로고"/>
+            </i>
+        </div>
+
+        <!-- 서버에 저장 -->
+        {% comment %} <div class="tool">
+            <i class="post-tool" id="post-tool" title="Post">
+              <a>등록</a>
+              {% comment %} <img height= 30px width= 30px src="https://cdn-icons.flaticon.com/png/512/3161/premium/3161837.png?token=exp=1659924722~hmac=f41f5d2736911418fac168050d83e695" alt="로고"/>  
+            </i>
+        </div> {% endcomment %}
+    
+    </div>{% comment %}tool-area 끝{% endcomment %}
+    
+    <div class="canvas-area parent">
+        <canvas id="canvas"></canvas>      
+    </div>{% comment %}canvas-area 끝{% endcomment %}
+</div>{% comment %} main-section끝 {% endcomment %}
+
+
+<!-- Script -->
+<script>
+  function save(){ 
+    var canvas = document.getElementById('canvas'); 
+    document.getElementById('image').value = canvas.toDataURL('image/png');
+    document.forms["form1"].submit(); 
+  }
+</script>
+
+<script type="text/javascript" src="/static/blog/js/jscolor.js"></script>
+<script type="text/javascript" src="/static/blog/js/my_script.js"></script>
+<script type="module" src="/static/blog/js/index.js"></script>
+{% endblock content %}

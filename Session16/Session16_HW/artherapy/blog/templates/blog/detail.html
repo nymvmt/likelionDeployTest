@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/home.css' %}">
+{% endblock css %}
+
+{% block bar %}
+
+{% endblock bar %}
+
+{% block content %}
+
+
+<a href="{%url 'mypage' %}">내 일기장</a>
+
+<h1>{{ post.title }}</h1>
+<h4>{{ post.content }}</h4>
+
+
+<img src="{{ post.image }}" alt="그림 일기">
+
+
+{% comment %} 
+<div>
+  코멘트 남기는 란
+</div> 
+{% endcomment %}
+{% endblock content %}

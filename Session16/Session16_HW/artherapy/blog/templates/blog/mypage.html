@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/mypage.css' %}">
+{% endblock css %}
+
+{% block bar %}
+
+{% endblock bar %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    <h2 id="BlackHanSans">📔 {{ user.username }}의 일기장</h2>
+
+    {% if not posts %}
+    <h4>아직 일기를 쓰지 않았어요</h4>
+    {% endif %}
+
+    {% for post in posts %}
+    <div class="post-item">
+        <img src="{{ post.image }}" height = 200px width = 200px alt="그림 일기">
+        <a href="{% url 'detail' post.pk %}"> {{post.title}} </a>
+    </div>
+    {% endfor %}
+
+    <br><br>
+    <a class="button" href="{% url 'home' %}">오늘의 일기 추가</a>
+
+{% else %}
+    <h3>로그인이 필요한 기능입니다!</h3>
+    <li><a class="log_item" href="{% url 'login'%}">Login</a></li>
+    <li><a class="log_item" href="{% url 'signup'%}">SignUp</a></li>
+{% endif %}
+
+
+{% endblock content %}
